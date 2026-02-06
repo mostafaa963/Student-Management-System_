@@ -39,7 +39,8 @@ namespace Student_Management_System
                 Console.WriteLine($"10- Check if the student enrolled in specific course");
                 Console.WriteLine($"11- Return the instructor name by course name");
                 Console.WriteLine($"12- Exit");
-                byte  choice = Convert.ToByte( Console.ReadLine());
+                //byte  choice = Convert.ToByte( Console.ReadLine());
+                byte choice = ReadByte("Enter your choice (1-12): ");
                 Console.WriteLine();
                 switch (choice)
                 {
@@ -212,6 +213,26 @@ namespace Student_Management_System
                 //{
                 //    break;
                 //}
+            }
+        }
+        static int ReadInt(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                var s = Console.ReadLine();
+                if (int.TryParse(s, out var v)) return v;
+                  Console.WriteLine("Invalid number, try again.");
+              }
+        }
+        static byte ReadByte(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                var s = Console.ReadLine();
+                if (byte.TryParse(s, out var v)) return v;
+                Console.WriteLine("Invalid number, try again.");
             }
         }
     }
