@@ -232,7 +232,7 @@ namespace Student_Management_System
                 Console.Write(prompt);
                 var s = Console.ReadLine();
                 if (byte.TryParse(s, out var v)) return v;
-                Console.WriteLine("Invalid number, try again.");
+                Console.WriteLine("Invalid number, try again...");
             }
         }
     }
